@@ -28,12 +28,16 @@ while running:
 
     if keys[pygame.K_k]:
         player_pos.y -= 500 * dt
+        ball_pos.y -= player_pos.y * dt
     if keys[pygame.K_j]:
         player_pos.y += 500 * dt
+        ball_pos.y += player_pos.y * dt
     if keys[pygame.K_h]:
         player_pos.x -= 500 * dt
+        ball_pos.x -= player_pos.x * dt
     if keys[pygame.K_l]:
         player_pos.x += 500 * dt
+        ball_pos.x += player_pos.x * dt
 
     # flip() the display to put your work on screen
     pygame.display.flip()
