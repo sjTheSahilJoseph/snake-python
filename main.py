@@ -21,21 +21,21 @@ while running:
     # fill the screen with a color to wipe away anything from last frame
     screen.fill("black")
 
-    ball = pygame.draw.circle(screen, "white", ball_pos, 10)
-    player = pygame.draw.circle(screen, "white", player_pos, 10)
+    ball = pygame.draw.circle(screen, "purple", ball_pos, 10)
+    player = pygame.draw.circle(screen, "blue", player_pos, 10)
 
     keys = pygame.key.get_pressed()
 
-    if keys[pygame.K_k]:
+    if keys[pygame.K_k] or keys[pygame.K_UP]:
         player_pos.y -= 500 * dt
         ball_pos.y -= player_pos.y * dt
-    if keys[pygame.K_j]:
+    if keys[pygame.K_j] or keys[pygame.K_DOWN]:
         player_pos.y += 500 * dt
         ball_pos.y += player_pos.y * dt
-    if keys[pygame.K_h]:
+    if keys[pygame.K_h] or keys[pygame.K_LEFT]:
         player_pos.x -= 500 * dt
         ball_pos.x -= player_pos.x * dt
-    if keys[pygame.K_l]:
+    if keys[pygame.K_l] or keys[pygame.K_RIGHT]:
         player_pos.x += 500 * dt
         ball_pos.x += player_pos.x * dt
 
